@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度前端实战二</title>
+	<style type="text/css">
+		body{
+			background-color:grey;
+			margin:0;
+			padding:0;
+		}
+		div.one{
+			margin:0;
+			padding:0;
+			height:60px;
+			background-color: #333333;
+		}
+		img.logo{
+			margin:5px;
+			height:50px;
+			width:70px;
+		}
+		.link{
+			position:relative;
+			float:right;
+			margin-top: 20px;
+			margin-right: 80px;
+			word-spacing: 30px;
+		}
+		.nav{
+			margin: 0;
+			float: right;
+		}
+		.nav li{
+			float: left;
+			margin:20px;
+			}
+		.nav a{
+	    	text-decoration: none;
+	    	color:white;
+	    	font-size: 7px;
+			font-family: "黑体";
+	    }
+	    a:hover{
+	    	color:grey;
+	    }
+	    div.two{
+			margin:20px;
+			background-color: white;
+			border:solid 1px grey;
+	    }
+	    div.two h1{
+	    	font-family: "黑体";
+	    	font-weight: bold;
+	    	margin:15px;
+	    }
+	    div.two h2{
+	    	font-family: "黑体";
+	    	font-weight: bold;
+	    	color:gray;
+	    	margin:15px;
+	    }
+	    div.two p{
+	    	font-family: "黑体";
+	    	margin:15px;
+	    }
+	    div.two p.one{
+	    	color:gray;
+	    	margin:15px;
+	    }
+	    div.two p.two{
+	    	text-indent: 3em;
+	    }
+	    a.one{
+	    	color:blue;
+	    }
+	    img.one{
+	    	margin:15px;
+	    }
+	    ul.one{
+	    	list-style-type: none;
+	    	font-family: "黑体";
+	    }
+	    ul.one li{
+	    	margin:10px;
+	    }
+	    div#picture{
+	    	margin:20px;
+	    	background-color: white;
+	    	border:solid 1px grey;
+	    }
+	    div#picture h1{
+	    	line-height: 80px;
+	    	margin-left: 30px;
+	    }
+	    div#picture div#one{
+	    	margin:15px;
+	    	border:solid 1px gray;
+	    	width:120px;
+	    	height:130px;
+	    	margin-left:68px;
+	    }
+	    div#picture div#one p{
+			text-align: center;
+			font-size: 5px;
+			font-family: "黑体"；
+			font-weight:bolder;
+	    }
+	    div#picture div#one img{
+	    	width:100px;
+	    	height:80px;
+	    	margin-left: 10px;
+	    }
+	    div.three{
+	    	margin:20px;
+	    	background-color:white;
+	    	border:solid 1px grey;
+	    	font-family: "黑体";
+	    	font-weight: bold;
+	    }
+		div.three h1{
+			margin-left: 20px;
+		}
+		div.three h2{
+			margin-left: 20px;
+			color:grey;
+		}
+		div.three p.three{
+			color:grey;
+			margin-left:20px;
+		}
+		ol.one{
+			margin-left:20px;
+		}
+		div.four{
+			margin-left:20px;
+		}
+		table.one{
+			border:solid 1px grey;
+			margin-left:20px;
+			width: 97%;
+			margin-bottom: 30px;
+			border-spacing: 1px;
+			border-collapse: collapse;
+		}
+		table.one tr,td{
+			border:solid 1px grey;
+		}
+		table.one tr.one{
+			color:white;
+			background:black;
+		}
+		table.one td.one{
+			color:blue;
+		}
+		table.one tr.two{
+			background:grey;
+		}
+		div.four{
+			background: white;
+			margin:20px;
+		}
+		div.five{
+			padding:20px;
+		}
+		div.five h2{
+			border-left: solid 3px grey;
+			font-weight: bold;
+			padding:8px;
+		}
+		div.six{
+			margin-top:5px;
+			margin-bottom: 20px;
+			margin-left: 70px;
+			font-size: 5px;
+			color:grey;
+		}
+		div.seven{
+			margin-top:5px;
+			margin-bottom: 15px;
+			margin-left: 70px;
+			font-size: 5px;
+			color:grey;
+		}
+		input.four{
+			width:90%;
+			height:40px;
+			background: blue;
+			margin-left:60px;
+		}
+		div.left{
+			margin-left: 15%;
+			font-family: "黑体";
+			position:relative;
+			width:20%;
+			text-align:right;
+			margin-top: 0px;
+			float:left;
+		}
+		div.left p{
+			height:19px;
+		}
+		div.right{
+			display: inline-block;
+			text-align:left;
+			margin-left:20px;
+		}
+		div.right p{
+			margin-left:3px;
+		}
+		div.foot{
+			height:80px;
+			width:100%;
+			background-color: black;
+			margin:0;
+			padding:0;
+		}
+		div.foot p{
+			color:white;
+			font-weight: bold;
+			text-align: center;
+			line-height: 80px;
+		}
+	</style>
+</head>
+<body>
+	<div class="one">
+		<img class="logo" src="img/百度图片.png">
+ 		<ul class="nav">
+			<li><a href="#">导航链接一</a></li>
+			<li><a href="#">导航链接二</a></li>
+			<li><a href="#">导航链接三</a></li>
+			<li><a href="#">导航链接四</a></li>
+		</ul>
+	</div>
+	<div class="two">
+		<h1>文章一级标题</h1>
+		<h2>文章二级标题</h2>
+		<p class="one">文章作者 文章发表时间</p>
+		<p class="two">这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了</p>
+		<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了</p>
+		<p>这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com" class="one">这里有个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+		<img src="img/qqtupian.jpg" alt="tupian" class="one">
+		<p class="two">这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了</p>
+		<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了</p>
+		<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com" class="one">这里有个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+	</div>
+	<div class="two">
+		<h1>另一篇文章一级标题</h1>
+		<h2>文章二级标题</h2>
+		<p class="one">文章作者 文章发表时间</p>
+		<p class="two">这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了</p>
+		<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了</p>
+		<p>这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com" class="one">这里有个链接链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+		<img src="img/qqtupian.jpg" alt="tupian" class="one">
+		<ul class="one">
+			<li>列表项目一</li>
+			<li>列表项目二</li>
+			<li>列表项目三</li>
+		</ul>
+		<br>
+		<br>
+</div>
+		<div id="picture">
+			<h1>图片</h1>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+				<div id="one">
+					<p>好看的图片</p>
+					<img src="img/qqtupian.jpg" alt="tupian">
+				</div>
+		</div>
+		<div class="three">
+			<h1 >最后一篇文章一级标题</h1>
+			<h2>文章二级标题</h2>
+			<p class="three">文章作者 文章发表时间</p>
+			<ol class="one">
+				<li>排名一</li>
+				<li>排名二</li>
+				<li>排名三</li>
+			</ol>
+			<div class="four">下面是一个表格，我这里给表格加了一个border="1"好让你看出是个表格，你们写html时不用加</div>
+			<table class="one">
+				<tr class="one">
+					<td>表头</td>
+					<td>表头</td>
+					<td>表头</td>
+				</tr>
+				<tr>
+					<td>表内容单元格</td>
+					<td>表内容单元格</td>
+					<td class="one">操作</td>
+				</tr>
+				<tr>
+					<td>表内容单元格</td>
+					<td>表内容单元格</td>
+					<td class="one">操作</td>
+				</tr>
+				<tr>
+					<td>表内容单元格</td>
+					<td>表内容单元格</td>
+					<td class="one">操作</td>
+				</tr>
+				<tr>
+					<td>表内容单元格</td>
+					<td>表内容单元格</td>
+					<td class="one">操作</td>
+				</tr>
+				<tr class="two">
+					<td>总计</td>
+					<td colspan="2">1000</td>
+				</th>
+			</table>
+		</div>
+		<div class="four">
+			<div class="five">
+				<h2>这里以后是个侧栏，这是侧栏的标题</h2>
+			</div>
+			<form method="post">
+				<div class="left">
+					<p>请输入邮箱地址</p> 
+					<p></p> 
+					<p>请输入密码</p> 
+					<p>请重复输入密码</p> 
+					<p></p> 
+					<p>性别</p> 
+		 			<p>城市</p> 
+					<p>爱好</p> 
+		 			<p>个人描述</p> 
+				</div>
+				<div class="right">
+				<p><input type="text" value="这是一个文本输入框" class="one"></p>
+				<p><div class="six">邮箱地址请按要求格式输入</div></p>
+				<p><input type="password" class="two"></p>
+				<p><input type="password" class="three"></p>
+				<p><div class="seven">密码请为6-16位英文数字</div></p>
+				<p>
+				<input type="radio" name="radiobutton"  value="radiobutton">男
+				<input type="radio" name="radiobutton"  value="radiobutton">女
+				</p>
+				<p>
+				<select name="select">
+					<option value="bj">北京</option>
+					<option value="sh">上海</option>
+					<option value="fj">福州</option>
+				</select>
+				</p>
+				<p>
+				<input type="checkbox">	运动
+				<input type="checkbox">	文学
+				<input type="checkbox">	艺术
+				</p>
+			    <p><textarea name="textarea"cols="90" rows="6">这是一个多行输入框，输入您的个人描述</textarea></p>
+			    </div>
+		    </form>
+		    <input type="submit" value="确认提交" class="four">
+		<div class="foot">
+			<p>版权所有#copy</p>
+		</div>
+</body>
+</html>
