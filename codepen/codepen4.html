@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700&subset=latin,cyrillic);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+  z-index: 0;
+  display: block;
+  font-family: 'Roboto';
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6, body p {
+  margin: 0;
+}
+
+.none {
+  display: none;
+}
+
+main {
+  position: absolute;
+  z-index: 19;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+main #wrapper {
+  position: absolute;
+  margin: 0 auto;
+  text-align: right;
+  color: white;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+main #wrapper #madeby {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+main #wrapper #author {
+  font-weight: 700;
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+#slider {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: block;
+  z-index: 1;
+  background-color: #1e1e1e;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+#btn-left, #btn-right {
+  width: 50px;
+  height: 75px;
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 20;
+  top: 0;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+#btn-left::-moz-selection, #btn-right::-moz-selection {
+  background-color: transparent;
+}
+
+#btn-left::selection, #btn-right::selection {
+  background-color: transparent;
+}
+
+#btn-left:active, #btn-right:active {
+  -webkit-transform: translateY(-48%) scale(0.97);
+          transform: translateY(-48%) scale(0.97);
+}
+
+#btn-left {
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#btn-right {
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.slide-el {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: block;
+  z-index: 1;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.slide-el img {
+  opacity: 0.5;
+}
+
+.slide-el img::-moz-selection {
+  background-color: transparent;
+}
+
+.slide-el img::selection {
+  background-color: transparent;
+}
+
+.slide-el::-moz-selection {
+  background-color: transparent;
+}
+
+.slide-el::selection {
+  background-color: transparent;
+}
+
+.slide-el.opened {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.slide-el.opened .slide-block {
+  left: 0;
+}
+
+.slide-el.opened img {
+  opacity: 1;
+}
+
+.slide-el .slide-block {
+  background-repeat: no-repeat;
+  background-attachment: local;
+  position: absolute;
+  overflow: hidden;
+  left: 100%;
+  background-color: #000;
+  background-size: cover;
+}
+
+.slide-el .slide-block::-moz-selection {
+  background-color: transparent;
+}
+
+.slide-el .slide-block::selection {
+  background-color: transparent;
+}
+
+.slide-el .slide-block img {
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  display: block;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+	</style>
+	<script>
+		var body, html, sliderBody, btnLeft, btnRight, i, parts,
+    vHeight, vWidth, slide, slideBlock, slides
+//Variable definitions
+var i = 0,
+    parts = 5,
+
+    //Main html elements
+    body = document.body,
+    html = document.element,
+
+
+    sliderBody = _id("slider"),
+    btnLeft = _id("btn-left"),
+    btnRight = _id("btn-right"),
+
+    transitionTime = 1;
+
+    //viewport Height and Width
+    vHeight = window.innerHeight,
+    vWidth = window.innerWidth,
+
+window.onload = function(){
+  prats = parts;
+  if(vWidth < 640){
+    parts = 1
+  } else (parts = prats)
+}      
+    urls = ["1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            ];
+
+window.addEventListener("resize", function(){
+  vHeight = window.innerHeight;
+  vWidth = window.innerWidth;
+  
+  if(vWidth < 640){
+    parts = 1
+  }
+
+  slideBlockCreate();
+}, false);
+
+window.onload = function(){
+  createElements();
+}
+function createElements(){
+  slide = _createEl("div");
+  slide.className += "slide-el";
+
+  slideBlockCreate();
+}
+
+function slideBlockCreate(){
+  console.log(vHeight, vWidth);
+
+  slideBlock = _createEl("div");
+  slideBlock.className += "slide-block slide-block-";
+  slideBlock.style.width = vWidth + "px";
+  slideBlock.style.height = (vHeight / parts ) + "px";
+  slideBlock.style["transition"] = "left "+ transitionTime +"s";
+
+  slideLayout();
+}
+
+function slideLayout(){
+  sliderBody.innerHTML = "";
+  for(var i=0; i < urls.length; i++){
+    sliderBody.appendChild(slide.cloneNode(true));
+  };
+  var slides = _cl("slide-el");
+  for(var i=0; i < slides.length; i++){
+    for(var x=0; x < parts; x++){
+      slides[i].appendChild(slideBlock.cloneNode(true))
+      slides[i].className = "slide-el slide-el-"+ i +""
+    }
+  };
+  for(var i = 0; i < slides.length; i++){
+    console.log(slides[i]);
+    slides[i].style.zIndex = i;
+    for(var x=0;x<slides[i].children.length;x++){
+      var offset = (x*(100/parts));
+      var imageOffset = vHeight / offset;
+      var transitionDelay = ((transitionTime / parts)/2)*x;
+      console.log(transitionDelay);
+      slides[i].children[x].style.top = offset + "%";
+      slides[i].children[x].innerHTML = "<img src="+ urls[i] +" style='top: "+(((vHeight / parts)*-1)*x)+"px'>"
+      // slides[i].children[x].style["background-image"] = "url("+urls[i]+")";
+      // slides[i].children[x].style["background-position"] = "50% "+((((vHeight / parts)*-1)*x))/+"px";
+      slides[i].children[x].style["transition-delay"] = transitionDelay +"s";
+    }
+  }
+  addStyle();
+}
+
+function addStyle(){
+  var slides = _cl("slide-el");
+  console.log(slides[i]);
+  slides[i].className += " opened";
+}
+
+btnLeft.addEventListener("click", function(){
+  goLeft();
+});
+function goLeft(){
+  var slides = _cl("slide-el");
+  if(i > 0){
+    i--;
+    removeClass(slides[i+1], "opened")
+  } else {
+    i = urls.length - 1;
+    for(x=0;x<urls.length;x++){
+      slides[x].className += " opened"
+    }
+  }
+}
+btnRight.addEventListener("click", function(){
+  goRight();
+});
+
+function goRight(){
+  var slides = _cl("slide-el");
+  if(i < urls.length -1){
+    i++;
+    slides[i].className += " opened"
+  } else {
+    i = 0;
+    for(x = urls.length; x > 0 ; x--){
+      removeClass(slides[x], "opened");
+    }
+  }
+}
+
+//Helper functions
+function _id(el){
+  return document.getElementById(""+ el +"");
+}
+function _cl(el){
+  return document.getElementsByClassName(""+ el +"")
+}
+function _createEl(el){
+  return document.createElement(""+ el +"");
+}
+function removeClass(el, _class) {
+  if (el && el.className && el.className.indexOf(_class) >= 0) {
+    var pattern = new RegExp('\\s*' + _class + '\\s*');
+    el.className = el.className.replace(pattern, ' ');
+  }
+}
+
+	</script>
+</head>
+<body>
+	<div id="btn-left"><</div>
+    <div id="slider"></div>
+    <div id="btn-right">></div>
+    <main>
+      <div id="wrapper">
+        <p id="madeby">Slider and Pictures made by</p><a href="http://codepen.io/Godje/" target="_blank" id="author">Daniel (Godje) Mayovsky</a>
+      </div>
+    </main>
+</body>
+</html>
